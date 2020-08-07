@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     public float jumpForce;
+
+    //Health
+    //public HealthBar healthBar;
+    //public float hitPoints;
+    //public float maxHitPoints = 5;
 
 
     private float jumpTimeCounter;
@@ -81,5 +87,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+    public void Death()
+    {
+        //Death animation
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

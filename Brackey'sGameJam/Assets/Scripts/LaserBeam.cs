@@ -7,6 +7,7 @@ public class LaserBeam : MonoBehaviour
     // Variables and References
     public float speed = 20f;
     public Rigidbody2D rb;
+    public float damage = 1f;
 
     public GameObject destroyEffect;
 
@@ -32,11 +33,16 @@ public class LaserBeam : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.name);
         if(collision.CompareTag("Player"))
         {
+            PlayerMovement player = collision.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.Death();
+            }
             DestroyProjectile();
         }
     }
