@@ -5,6 +5,7 @@ using UnityEngine;
 public class LaserShooting : MonoBehaviour
 {
     public Transform firePoint;
+    public GameObject LaserPrefab;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,6 @@ public class LaserShooting : MonoBehaviour
 
     void Shooting()
     {
-
+        Instantiate(LaserPrefab, firePoint.position, firePoint.rotation);
     }
 }
