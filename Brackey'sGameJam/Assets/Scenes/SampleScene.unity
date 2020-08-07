@@ -947,9 +947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  stoppingDistance: 5
-  retreatDistance: 2
-  timeBtwShots: 0
+  stoppingDistance: 8
+  retreatDistance: 4
   startTimeBtwShots: 1
   projectile: {fileID: 5296130549185704334, guid: 6c52a8d844f105e49a9a62deaa29fc1a, type: 3}
   player: {fileID: 2133661562}

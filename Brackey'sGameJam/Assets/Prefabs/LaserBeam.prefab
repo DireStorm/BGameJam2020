@@ -146,5 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rb: {fileID: 5296130549185704333}
+  destroyEffect: {fileID: 8471135831624242289, guid: 8e3c150342954a345af5444d8a245f52, type: 3}
   player: {fileID: 0}
   target: {x: 0, y: 0}

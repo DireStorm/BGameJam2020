@@ -8,6 +8,8 @@ public class LaserBeam : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
 
+    public GameObject destroyEffect;
+
     public Transform player;
     public Vector2 target;
 
@@ -42,6 +44,6 @@ public class LaserBeam : MonoBehaviour
     void DestroyProjectile()
     {
         Destroy(gameObject);
-
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
     }
 }
