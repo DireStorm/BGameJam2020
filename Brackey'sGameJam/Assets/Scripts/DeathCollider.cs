@@ -10,7 +10,7 @@ public class DeathCollider : MonoBehaviour
 
         if (collision.transform.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

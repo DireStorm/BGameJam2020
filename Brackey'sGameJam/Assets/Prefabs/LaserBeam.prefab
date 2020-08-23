@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5296130549185704371}
   - component: {fileID: 5296130549185704332}
   - component: {fileID: 5296130549185704333}
-  - component: {fileID: 8669619508058067192}
+  - component: {fileID: 7036939677802046121}
   m_Layer: 0
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bc3ab2c685b83c143924a6c73ae21759, type: 3}
-  m_Color: {r: 0.38892844, g: 0.7705251, b: 0.8679245, a: 1}
+  m_Color: {r: 0.8962264, g: 0.17332679, b: 0.2686954, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8669619508058067192
+--- !u!114 &7036939677802046121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rb: {fileID: 5296130549185704333}
+  damage: 20
   destroyEffect: {fileID: 8471135831624242289, guid: 8e3c150342954a345af5444d8a245f52, type: 3}
   player: {fileID: 0}
   target: {x: 0, y: 0}
+  ground: {fileID: 8121450400055081322, guid: ff4d8f102cb43b14caf431698e121f57, type: 3}
+  platformBoom: {fileID: 4761461068201498322, guid: ed6fe69a6b32aa94a9378389f52aa7ac, type: 3}

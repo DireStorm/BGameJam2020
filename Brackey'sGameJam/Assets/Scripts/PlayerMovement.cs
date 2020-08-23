@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     //public HealthBar healthBar;
     //public float hitPoints;
     //public float maxHitPoints = 5;
+    public GameObject ground;
 
 
     private float jumpTimeCounter;
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", moveInput);
         animator.SetBool("isJumping", isJumping);
         Jump();
+        Rewind();
     }
 
     void Jump()
@@ -88,6 +90,26 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
     }
+
+    public void Rewind()
+    {
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+           if(ScoreCounter.scoreValue > 0)
+            {
+                CreateObject();
+                ScoreCounter.scoreValue -= 1;
+            }
+        }
+    }
+
+    public void CreateObject()
+    {
+        Vector3 objectPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        objectPos.z = 0f;
+        Instantiate(ground, objectPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+    }
+
     public void Death()
     {
         //Death animation

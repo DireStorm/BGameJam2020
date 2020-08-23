@@ -14,6 +14,12 @@ public class LaserBeam : MonoBehaviour
     public Transform player;
     public Vector2 target;
 
+    //Ground Breaking
+    public GameObject ground;
+    public GameObject platformBoom;
+    public static float groundCount;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,15 +41,28 @@ public class LaserBeam : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
         if(collision.CompareTag("Player"))
         {
             PlayerMovement player = collision.GetComponent<PlayerMovement>();
             if (player != null)
             {
                 player.Death();
+                //groundCount = 0;
+                ScoreCounter.scoreValue = 0;
             }
             DestroyProjectile();
+        }
+
+        if(collision.CompareTag("Ground"))
+        {
+            //groundCount += 1;
+            ScoreCounter.scoreValue += 1;
+            DestroyProjectile();
+            ground = GameObject.FindGameObjectWithTag("Ground");
+            ground.SetActive(false);
+            Instantiate(platformBoom, transform.position, Quaternion.identity);
+            //Debug.Log(groundCount);
         }
     }
 
